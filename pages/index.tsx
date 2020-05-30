@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import { NextPageContext } from 'next';
+// Screens
+import Loading from '@components/screens/loading';
 
-import styles from './home.scss';
+import styles from './UI.scss';
 
 // any modifications to the default context, e.g. query types
 interface Context extends NextPageContext {}
 
-class Index extends Component {
+
+class UI extends Component {
 	static async getInitialProps(ctx: Context) {
 		console.log(ctx.query, '!@!@');
 
@@ -15,17 +18,34 @@ class Index extends Component {
 		}
 	}
 
+	state = {
+		loading: true
+	}
+
+	componentDidMount() {
+		this.handleLoadingScreen();
+	}
+
+	handleLoadingScreen = () => {
+		setTimeout(() => {
+			this.setState({
+				loading: false
+			});
+		}, 8000);
+	}
+
 	render() {
-		console.log(this.props, '!@!@');
+		const {
+			loading,
+		} = this.state;
 
 		return (
-			<h1 className={styles('headline')}>
-				This is Nextjs TypeScript
-				<a href='/about'>About</a>
-			</h1>
+			<div className={styles('main-container')}>
+				{loading && <Loading />}
+			</div>
 		)
 	}
 
 }
 
-export default Index
+export default UI;
