@@ -1,7 +1,12 @@
 .logo {
-	position: relative;
+	position: absolute;
 	width: 10rem;
 	height: 10rem;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
 	z-index: 1;
 
 	path {

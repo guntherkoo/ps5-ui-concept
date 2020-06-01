@@ -1,0 +1,27 @@
+.container {
+	position: absolute;
+	bottom: 20vh;
+}
+
+.scroll-bar {
+	white-space: nowrap;
+}
+
+.media {
+	position: relative;
+	display: inline-block;
+	width: 20rem;
+	height: 20rem;
+	margin-right: 2rem;
+
+	&:last-child {
+		margin-right: 0;
+	}
+}
+
+.media-art {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+}

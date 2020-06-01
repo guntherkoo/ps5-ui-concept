@@ -1,0 +1,19 @@
+.status-bar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	svg {
+		width: 1.8rem;
+
+		> path {
+			fill: white;
+		}
+	}
+
+	.status-left,
+	.status-right {
+		display: flex;
+		align-items: center;
+	}
+}
