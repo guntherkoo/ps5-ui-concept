@@ -16,14 +16,14 @@
 }
 
 :global {
-	.fade-enter {
+	.fade-in-out-enter {
 		opacity: 0;
 	}
-	.fade-enter-active {
+	.fade-in-out-enter-active {
 		opacity: 1;
 		transition: opacity .5s;
 	}
-	.fade-enter-done {
+	.fade-in-out-enter-done {
 		opacity: 0;
 		transition: opacity .5s;
 	}

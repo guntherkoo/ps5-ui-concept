@@ -16,7 +16,7 @@ function Logo() {
 		<CSSTransition
 			in={fade_in}
 			timeout={5000}
-			classNames='fade'
+			classNames='fade-in-out'
 			onExited={() => setFadeIn(false)}
 		>
 			<PSLogo className={styles('logo')}/>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NextPageContext } from 'next';
+// import { NextPageContext } from 'next';
 
 // Screens
 import Loading from '@components/screens/loading';
@@ -9,17 +9,17 @@ import XMB from '@components/common/xmb';
 import styles from './UI.scss';
 
 // any modifications to the default context, e.g. query types
-interface Context extends NextPageContext {}
+// interface Context extends NextPageContext {}
 
 
 class UI extends Component {
-	static async getInitialProps(ctx: Context) {
-		console.log(ctx.query, '!@!@');
+	// static async getInitialProps(ctx: Context) {
+	// 	console.log(ctx.query, '!@!@');
 
-		return {
-			page_props: 'Hello'
-		}
-	}
+	// 	return {
+	// 		page_props: 'Hello'
+	// 	}
+	// }
 
 	state = {
 		loading: true

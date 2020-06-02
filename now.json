@@ -3,7 +3,6 @@
 	"name": "ps5-ui-concept",
 	"builds": [{ "src": "package.json", "use": "@now/next" }],
 	"routes": [
-		{ "src": "/", "dest": "/index"},
-		{ "src": "/about", "dest": "/about"}
+		{ "src": "/", "dest": "/index"}
 	]
 }
