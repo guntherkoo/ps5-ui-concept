@@ -1,24 +1,25 @@
-import { useSpring, animated } from 'react-spring';
+import { useState, useEffect } from 'react';
+import { CSSTransition } from 'react-transition-group';
 import Logo from '@components/logo';
 
 import styles from './Loading.scss';
 
 function Loading() {
-	const loading = useSpring({
-		opacity: 0,
-		from: { opacity: 1 },
-		delay: 4000,
-		config: {
-			duration: 1000,
-		}
+	const [loading, setLoading] = useState(false);
+
+	useEffect(() => {
+		setLoading(true);
 	});
 
 	return (
 		<>
-			<animated.div
-				className={styles('container')}
-				style={loading}
-			/>
+			<CSSTransition
+				in={loading}
+				timeout={5000}
+				classNames='loading'
+			>	
+				<div className={styles('loading-screen')} />
+			</CSSTransition>
 			<Logo />
 		</>
 	);

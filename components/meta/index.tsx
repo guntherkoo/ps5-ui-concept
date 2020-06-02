@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Head from 'next/head'
-import PSLogo from '@components/icons/ps_logo.svg';
 
 type MetaProps = {
 	title: string,

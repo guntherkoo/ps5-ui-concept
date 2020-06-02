@@ -4,12 +4,13 @@ import styles from './Time.scss';
 
 function Time() {
 	return (
-		<Clock
-			className={styles('timestamp')}
-			format={'HH:mm:ss'}
-			timezone={'America/New_York'}
-			ticking
-		/>
+		<div className={styles('timestamp')}>
+			<Clock
+				format={'HH:mm:ss'}
+				timezone={'America/New_York'}
+				ticking
+			/>
+		</div>
 	)
 }
 

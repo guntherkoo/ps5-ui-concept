@@ -1,47 +1,25 @@
-import { useState } from 'react';
-import { useSpring, useTransition, animated } from 'react-spring';
-import * as easings from 'd3-ease';
-import GameData from './mockdata/game-data.json';
+import GameData from './mockdata/game-data';
 
 import styles from './XMB.scss';
 
 function XMB() {
-	const [items, set] = useState(GameData);
-	const transitions = useTransition(items, item => item.name, {
-		from: {
-			transform: 'scale(1.2) translateY(-50px)',
-			opacity: '0'
-		},
-		enter: {
-			transform: 'scale(1) translateY(0)',
-			opacity: '1'
-		},
-		leave: {
-			transform: 'scale(1.2) translateY(-50px)',
-			opacity: '0'
-		},
-		trail: 100,
-		config: {
-			easing: easings.easeCubicInOut
-		}
-	});
-
 	return (
 		<div className={styles('container')}>
 			<div className={styles('scroll-bar')}>
-				{transitions.map(({ item, props, key }) =>
-					<animated.div
-						className={styles('media')}
-						style={props}
-						key={key}
-					>
+				{GameData.map((item, key) => {
+					return (
 						<div
-							className={styles('media-art')}
-							style={{backgroundImage: `url(${item.image})`}}
-							aria-label={item.name}
-						/>
-					</animated.div>
-				)}
+							className={styles('media')}
+							key={key}
+						>
+							<div
+								className={styles('media-art')}
+								style={{backgroundImage: `url(${item.image})`}}
+								aria-label={item.name}
+							/>
+						</div>
+					)
+				})}
 			</div>
 		</div>
 	)

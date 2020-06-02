@@ -34,7 +34,7 @@ class UI extends Component {
 			this.setState({
 				loading: false
 			});
-		}, 8000);
+		}, 7000);
 	}
 
 	render() {

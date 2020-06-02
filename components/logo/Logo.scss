@@ -8,8 +8,23 @@
 	bottom: 0;
 	margin: auto;
 	z-index: 1;
+	opacity: 0;
 
 	path {
 		fill: white;
+	}
+}
+
+:global {
+	.fade-enter {
+		opacity: 0;
+	}
+	.fade-enter-active {
+		opacity: 1;
+		transition: opacity .5s;
+	}
+	.fade-enter-done {
+		opacity: 0;
+		transition: opacity .5s;
 	}
 }
