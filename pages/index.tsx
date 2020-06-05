@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 // import { NextPageContext } from 'next';
 
 // Screens
@@ -10,49 +10,26 @@ import styles from './UI.scss';
 
 // any modifications to the default context, e.g. query types
 // interface Context extends NextPageContext {}
+function UI() {
+	const [loading, setLoading] = useState(true);
 
+	useEffect(() => {
+		const handleLoadingScreen = setTimeout(() => setLoading(false), 7000);
 
-class UI extends Component {
-	// static async getInitialProps(ctx: Context) {
-	// 	console.log(ctx.query, '!@!@');
+		return () => clearTimeout(handleLoadingScreen);
+	});
 
-	// 	return {
-	// 		page_props: 'Hello'
-	// 	}
-	// }
-
-	state = {
-		loading: true
-	}
-
-	componentDidMount() {
-		this.handleLoadingScreen();
-	}
-
-	handleLoadingScreen = () => {
-		setTimeout(() => {
-			this.setState({
-				loading: false
-			});
-		}, 7000);
-	}
-
-	render() {
-		const { loading } = this.state;
-
-		return (
-			<div className={styles('app-container')}>
-				{loading ?
-					<Loading /> :
-					<div className={styles('container')}>
-						<StatusBar />
-						<XMB />
-					</div>
-				}
-			</div>
-		)
-	}
-
+	return (
+		<div className={styles('app-container')}>
+			{loading ?
+				<Loading /> :
+				<div className={styles('container')}>
+					<StatusBar />
+					<XMB />
+				</div>
+			}
+		</div>
+	);
 }
 
 export default UI;
