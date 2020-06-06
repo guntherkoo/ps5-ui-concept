@@ -8,20 +8,14 @@ function XMB() {
 	const [xmb_fade, setXMB] = useState(false);
 	const [image_load, setImageLoad] = useState(false);
 	const [xmb_width, setXMBWidth] = useState(0);
-	const [on_hover_index, setHoverIndex] = useState('');
-	const background = on_hover_index && GameData[on_hover_index].art;
+	const [on_hover_index, setHoverIndex] = useState(null);
+	const [initial, setInital] = useState(false);
 
 	const scrollBar = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
 		setXMB(true);
 		
-		const img = new Image();
-		img.src = background;
-		img.onload = () => {
-			setImageLoad(true);
-		}
-
 		const xmb_container = document.getElementById('xmb');
 
 		if (xmb_container != null) {
@@ -54,15 +48,19 @@ function XMB() {
 	const handleOnClick = i => {
 		setImageLoad(false);
 		setHoverIndex(i);
+
+		if (on_hover_index === null) {
+			setInital(true);
+		}
 	}
 
 	return (
 		<>
 			<TransitionGroup className={styles('game-art-background', {
-				'show': on_hover_index
+				'show': initial
 			})}>
 				{GameData.map((item: any, i: number) => {
-					if (Number(on_hover_index) === i) {
+					if (on_hover_index === i) {
 						return (
 							<CSSTransition
 								key={i}
