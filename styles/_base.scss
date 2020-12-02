@@ -16,6 +16,8 @@
 * {
 	box-sizing: border-box;
 	margin: 0;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
 }
 
 html,
@@ -54,10 +56,6 @@ a {
 	&:focus {
 		outline: none;
 	}
-}
-
-h1, h2, h3, h4, h5 {
-	font-family: 'Khand', sans-serif;
 }
 
 ul {

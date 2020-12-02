@@ -1,0 +1,117 @@
+@import 'styles/_colors.scss';
+
+.status-bar {
+	position: relative;
+	opacity: 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	z-index: 1;
+
+	svg {
+		> path {
+			fill: white;
+		}
+	}
+
+	svg.wifi {
+		width: 1.8rem;
+	}
+
+	svg.battery {
+		width: 2.4rem;
+		margin-right: 1.5rem;
+	}
+
+	.player {
+		position: relative;
+		margin-right: 1.5rem;
+
+		&.one {
+			&:before {
+				background-color: $blue;
+			}
+
+			&:after {
+				content: '1P';
+			}
+		}
+
+		&.two {
+			&:before {
+				background-color: $red;
+			}
+
+			&:after {
+				content: '2P';
+			}
+		}
+
+		&.three {
+			&:before {
+				background-color: $yellow;
+			}
+
+			&:after {
+				content: '3P';
+			}
+		}
+
+		&.four {
+			&:before {
+				background-color: $teal;
+			}
+
+			&:after {
+				content: '4P';
+			}
+		}
+
+		&:before {
+			content: '';
+			top: .8rem;
+			z-index: 2;
+			width: 1.4rem;
+			position: absolute;
+			height: .3rem;
+			left: 50%;
+			margin-left: -0.7rem;
+			border-radius: .15rem;
+		}
+
+		&:after {
+			position: absolute;
+			left: 50%;
+			bottom: .6rem;
+			font-size: .8rem;
+			font-weight: 700;
+			height: .5rem;
+			color: white;
+			margin-left: -.5rem;
+		}
+	}
+
+	svg.controller {
+		position: relative;
+		width: 2.4rem;
+	}
+
+	.status-left,
+	.status-right {
+		display: flex;
+		align-items: center;
+	}
+}
+
+:global {
+	.status-enter {
+		opacity: 0;
+	}
+	.status-enter-active {
+		opacity: 1;
+		transition: opacity .5s;
+	}
+	.status-enter-done {
+		opacity: 1;
+	}
+}

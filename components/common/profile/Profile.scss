@@ -1,0 +1,70 @@
+@import 'styles/_colors.scss';
+
+.container {
+	display: flex;
+	align-items: center;
+}
+
+.pic {
+	position: relative;
+	max-width: 4rem;
+	margin-right: 1.5rem;
+
+	img {
+		display: block;
+		width: 100%;
+		overflow: hidden;
+		border-radius: 2rem;
+	}
+}
+
+.ps-plus {
+	position: absolute;
+	top: 0;
+	right: -.5rem;
+
+	img {
+		width: 1.4rem;
+	}
+}
+
+h4 {
+	font-size: 1.6rem;
+	font-weight: 500;
+	color: white;
+}
+
+h5 {
+	font-size: 1.2rem;
+	font-weight: 500;
+	color: white;
+	position: relative;
+	display: flex;
+	align-items: center;
+
+	&:before {
+		content: '';
+		width: .5rem;
+		height: .5rem;
+		border-radius: .25rem;
+		background-color: $limegreen;
+		border: 1px solid rgba(white, .5);
+		margin-right: .5rem;
+	}
+}
+
+.trophy {
+	display: flex;
+	align-items: center;
+
+	svg {
+		width: 1.2rem;
+	}
+
+	span {
+		font-size: 1.4rem;
+		font-weight: 700;
+		color: white;
+		margin-left: .5rem;
+	}
+}

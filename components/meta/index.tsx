@@ -10,8 +10,8 @@ type MetaProps = {
 
 class Meta extends Component<MetaProps> {
 	static defaultProps = {
-		title: 'Typescript + NextJS Boilerplate',
-		description: 'Typescript + NextJS Boilerplate by Gunther Koo',
+		title: 'PlayStation 5',
+		description: 'A Conceptual User Interface',
 		image: 'https://images.prismic.io/koofolio/6abc0a59-b849-4e35-a73b-ea9faf76ff2a_Screen+Shot+2020-02-28+at+1.43.17+PM.png',
 		url: 'https://www.guntherkoo.com',
 	}

@@ -22,7 +22,9 @@
 		"esModuleInterop": true,
 		"resolveJsonModule": true,
 		"isolatedModules": true,
+		"suppressImplicitAnyIndexErrors": true,
 		"baseUrl": ".",
+		"noImplicitAny": false,
 		"paths": {
 			"@components/*": ["./components/*"],
 			"@pages/*": ["./pages/*"],

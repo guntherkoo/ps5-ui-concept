@@ -1,0 +1,30 @@
+.logo {
+	position: absolute;
+	width: 10rem;
+	height: 10rem;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	z-index: 1;
+	opacity: 0;
+
+	path {
+		fill: white;
+	}
+}
+
+:global {
+	.fade-in-out-enter {
+		opacity: 0;
+	}
+	.fade-in-out-enter-active {
+		opacity: 1;
+		transition: opacity .5s;
+	}
+	.fade-in-out-enter-done {
+		opacity: 0;
+		transition: opacity .5s;
+	}
+}
